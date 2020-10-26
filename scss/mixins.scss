@@ -1,0 +1,31 @@
+@use 'variables' as *; 
+@import 'variables'; 
+
+
+@mixin  tablet {
+    @media only screen and (min-width: $tablet-breakpoint)  {
+      @content;
+    }
+  }
+  
+  @mixin  desktop {
+    @media only screen and (min-width: $desktop-breakpoint)  {
+      @content;
+    }
+  }  
+
+  @mixin  mobile {
+    @media only screen and (min-width: $mobile-breakpoint)  {
+      @content;
+    }
+  }  
+  @mixin  wide-tablet {
+    @media only screen and (min-width: $wide-tablet-breakpoint)  {
+      @content;
+    }
+  }  
+  @mixin  wide-desktop {
+    @media only screen and (min-width: $wide-desktop-breakpoint)  {
+      @content;
+    }
+  }

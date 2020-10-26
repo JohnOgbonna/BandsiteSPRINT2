@@ -1,0 +1,1037 @@
+@import 'variables'; 
+@use 'variables' as *; 
+@use 'mixins' as *; 
+@import 'mixins'; 
+
+ html{
+     background-color:white; 
+     box-sizing: border-box;
+     font-family: 'Roboto', sans-serif; 
+     align-items: center; 
+     overflow-x: hidden;
+ }
+  body{ 
+      margin:0; 
+      overflow-x: hidden;
+  } 
+    a {
+        color: inherit;
+        text-decoration: none; 
+        &:hover{ 
+            text-decoration: underline; 
+        }
+    }
+
+.nav{ 
+    background-color: rgb(56, 56, 56); 
+    display: flex; 
+    color: white; 
+    width: 100%; 
+    @include mobile{ 
+    height: 21%;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+    min-height: 125px; 
+    max-height:125px; 
+    padding-top: 3%;
+    } 
+    @include tablet{ 
+        flex-direction: row; 
+        padding-left: 4%; 
+        align-items: center; 
+        justify-content: left; 
+        padding-top: 0%; 
+        min-height: 135px; 
+        max-height:135px;   
+    } 
+    @include desktop{ 
+        justify-content: flex-start; 
+        padding-left: 10%; 
+        min-height: 100px;
+        max-height: 100px;
+    } 
+
+    &__header{  
+        font-size: 2.7rem;  
+        margin-bottom: 8px; 
+        padding-top: 0; 
+        margin-top: 3%; 
+        font-weight: lighter; 
+        &:hover{
+            transform: scale 1.4; 
+        }
+        @include tablet{ 
+            font-size: 2.1rem; 
+            margin-bottom: 0px; 
+            margin-top: 0; 
+            margin-right: 10%;
+        } 
+        @include desktop{ 
+            font-size:1.5rem; 
+            margin-right: 4%;
+        }
+    } 
+    &__select{ 
+        display: flex; 
+        flex-direction: row;
+        align-items: center; 
+        justify-content: space-between; 
+        list-style: none; 
+        width: 100vw; 
+        font-size: 1.5rem; 
+        height: 10vh; 
+        list-style: none; 
+        margin:0; 
+        padding: 0; 
+        height: 10vh; 
+        min-height: 29px; 
+        @include tablet{  
+            height: 100%; 
+            width: 40%; 
+            justify-content: space-evenly; 
+            align-items: initial 
+        } 
+        @include desktop{ 
+            width: 20%; 
+            font-size: 1rem;
+        }
+        &-Shows, &-Biography, &-BiographyShows, &-ShowsShow{  
+            width:50%; 
+            justify-content: space-between;  
+            text-align: center;  
+            min-height: 29px; 
+            padding-bottom: 13px; 
+            &:hover{ 
+                text-decoration: underline; 
+            } 
+        
+            @include tablet{ 
+            width: 38%; 
+            margin-right: 10%; 
+            padding-top:60px; 
+            padding-bottom: 40px; 
+            } 
+            @include desktop{ 
+            width: 50%;     
+            padding-top:42px; 
+            padding-bottom: 18px; 
+            }
+        } 
+        &-Biography, &-ShowsShow{
+            border-bottom: 7px solid white;
+        }
+
+    }
+} 
+#homepage{ 
+    background-image: url("../assets/hero_image.jpg"); 
+} 
+#showspage{ 
+    background-image: url("../assets/showsHero.jpg");
+}
+.hero{ 
+    width: 94vw; 
+    height: 70vh; 
+    min-height:300px;
+    background-position: center; 
+    background-size: cover; 
+    display: flex; 
+    flex-direction: column;
+    align-items: left; 
+    padding-left: 3vw; 
+    padding-right: 3vw; 
+    align-content: space-around; 
+    color: white; 
+    @include tablet{ 
+        min-height: 500px; 
+        width: 94vw; 
+        height: 70vh; 
+        padding-left: 3vw; 
+        padding-right: 3vw;
+    }
+   @include desktop{ 
+       height: 75vh; 
+       width: 74vw; 
+       padding-left: 12vw; 
+       padding-right: 12vw;
+      
+   } 
+   &__frame{ 
+       @include desktop{ 
+         display: flex; 
+         align-items: center; 
+         justify-content: space-between;
+       }
+   } 
+   &__header{ 
+       margin-top: 12%; 
+       margin-bottom: 0;
+       @include tablet{ 
+           margin-top: 10vh; 
+           margin-bottom: 5%;
+       }
+   } 
+   &__textShows{ 
+    font-size: 3.1rem;
+    width: 94vw; 
+    height: 40%; 
+    justify-self: center; 
+    margin: 2% 0 14% 0; 
+    font-weight: bold; 
+    
+    @include tablet{ 
+        font-size: 4rem;  
+        margin: 2% 0 5% 0; 
+        height: 20vh;
+   } 
+   @include desktop{ 
+       width: 45%; 
+       display: inline;
+       
+   }
+
+   }
+    &__text{  
+        font-size: 2.5rem;
+        width: 60%; 
+        height: 30%; 
+        justify-self: center; 
+        margin: auto 0; 
+        font-weight: bold; 
+        
+        @include tablet{ 
+            font-size: 4rem;  
+            margin-top: 6%;
+       } 
+       @include desktop{ 
+           width: 45%
+       }
+    }
+}  
+iframe{ 
+    width: 94vw;
+    border-radius: 8px; 
+    height: 15vh;
+    @include tablet{
+    width: 65vw; 
+    height: 18vh;
+} 
+@include desktop{ 
+    width: 25vw; 
+    display: inline; 
+    height: 15vh;
+}
+}  
+.credits{ 
+    width:15vw;
+}
+.Shows{ 
+  
+    padding-left: 7vw; 
+    padding-right: 7vw;  
+    @include desktop{ 
+        width: 60vw; 
+    } 
+    &__container{ 
+        @include desktop{
+            display: flex; 
+            flex-direction: row; 
+            justify-content: space-between; 
+            width: 90vw; 
+            padding: 0 5vw;
+    } 
+}
+    &__header{
+    width: 86vw; 
+    padding-left: 7vw; 
+    padding-right: 7vw; 
+    @include desktop{ 
+        width: 10vw; 
+       
+    } 
+   
+   
+    @include tablet{ 
+        font-size: 3rem;
+    } 
+   
+    }
+    &__ledgend{  
+        font-size: 1rem; 
+        color: rgba(130, 124, 124, 0.898); 
+        @include mobile{ 
+            display: none;
+        } 
+        @include tablet{ 
+            display: flex; 
+            justify-content: space-between; 
+        } 
+        &-button{ 
+            visibility: hidden; 
+            width: 20vw; 
+            @include desktop{ 
+                width: 10vw;
+            }
+        } 
+        &-venue { 
+            width: 20vw; 
+            text-align: left; 
+            @include desktop{ 
+                width: 12vw;
+            }
+        } 
+        &-location{ 
+            width: 15vw; 
+            text-align: left; 
+            @include desktop{ 
+                width: 7.5vw;
+            }
+        } 
+        &-dates{ 
+            width: 22vw; 
+            @include desktop{ 
+                width: 14vw;
+            }
+        }
+    }
+    &__box{ 
+        padding-bottom: 3%; 
+        border-bottom: 2px solid rgba(191, 183, 183, .4);   
+        @include tablet{  
+            display: flex; 
+            align-items: left; 
+            padding-bottom: 0; 
+            height: 15vh; 
+            &:last-child{ 
+                margin-bottom: 6%;
+            }
+        } 
+        @include desktop{ 
+            height:8vh;
+        }
+        &-location{ 
+            &--place{ 
+                margin-bottom: 6%;
+                @include tablet{ 
+                    margin: 0; 
+                    width: 15vw; 
+                    text-align: left;
+                } 
+                @include desktop{ 
+                    width: 7.5vw;
+                }
+            }
+        } 
+        &-venue{
+            &--place{ 
+                width: 20vw; 
+                text-align: left; 
+                @include desktop{ 
+                    width: 12vw;
+                }
+            }
+         }
+        &-date{ 
+
+            &--event{
+                margin-top: 1.8%; 
+                @include tablet{ 
+                    margin-top: 0; 
+                    margin-bottom: 0; 
+                    width: 22vw;
+                } 
+                @include desktop{ 
+                    width: 14vw;
+                }
+            }
+        } 
+        &-button{ 
+            width: 92vw; 
+            border-radius: 8px; 
+            height: 7vh; 
+            color: white; 
+            font-size: 1.2rem; 
+            background-color: rgb(56, 56, 56) ; 
+            margin-bottom: 1.2vh; 
+            @include tablet{ 
+                width: 20vw; 
+                height: 7vh; 
+                margin-bottom: 0; 
+                font-size: 1rem;
+            } 
+            @include desktop{ 
+                width: 10vw; 
+                height: 6vh;
+            }
+        } 
+        @include tablet{ 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+        }
+    } 
+}
+
+h4{ 
+    color: rgba(130, 124, 124, 0.898); 
+    margin-bottom: .5%; 
+    @include tablet{ 
+        display: none;
+    }
+    
+}    
+.about{ 
+    font-size: 2.2rem; 
+    margin-left: 5%;  
+    @include desktop{ 
+        margin-left: 12%; 
+        font-size: 3rem; 
+        font-weight: 600; 
+        margin-top: 5%; 
+        margin-bottom: 5%;
+    } 
+    @include wide-desktop{ 
+        margin-left: 15%; 
+        font-size: 3.5rem; 
+        font-weight: 600;
+    }
+} 
+.bio{ 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    width: 92vw; 
+    padding-left: 4vw; 
+    padding-right: 4vw; 
+    align-items: center; 
+    @include desktop{ 
+        width:76%;
+        padding:0 12% 0 12%; 
+        margin: 0;
+    } 
+    @include wide-desktop{ 
+        width:70%;
+        padding:0 15% 0 15%; 
+        margin: 0;
+    }
+    
+    &__image{ 
+        min-height:300px; 
+        height: 40%;
+        min-width: 300px; 
+        max-width: 768px; 
+        justify-self: center; 
+        &:hover{
+            transform: scale(1.3); 
+            z-index: 3; 
+            transition: transform 0.5s ;
+        }
+        @include tablet{ 
+        height:50%;
+        min-height: 500px; 
+        max-width: 1024px; 
+        min-width: 600px;
+       } 
+       @include desktop{ 
+           width: 100%;
+       }  
+    } 
+
+    &__quote{ 
+        font-size: 1.5rem; 
+        text-align: left; 
+        font-weight: bold; 
+        line-height: 1.5; 
+         align-self: flex-start; 
+        @include tablet{ 
+            margin-top: 6%;
+            font-size: 2rem;
+        } 
+        @include desktop{
+            align-self: flex-start; 
+            
+        }
+    } 
+    &__credit{ 
+        font-size: 1.2rem; 
+        text-align: left; 
+        margin-bottom: 2vh; 
+        font-weight: bold; 
+        margin-top: 2%; 
+       align-self: flex-start; 
+        @include tablet{ 
+            font-size: 1.7rem; 
+            justify-self: flex-start; 
+        } 
+        @include desktop{ 
+            font-size: 1.2rem; 
+            align-self: flex-start; 
+        }
+    } 
+} 
+.story{ 
+    width: 94vw; 
+    padding-left: 3vw; 
+    padding-right: 3vw; 
+    display: flex; 
+    flex-direction: column;  
+    @include desktop{ 
+        width: 76%;
+        padding:0 12% 0 12%;
+    } 
+    @include wide-desktop{ 
+        width: 70%;
+        padding:0 15% 0 15%;
+    }
+    &__container{ 
+        display: flex; 
+        flex-direction: column; 
+        font-size: 1.0rem; 
+        line-height: 1.4;
+        @include tablet{ 
+            flex-direction: row; 
+            justify-content: space-between; 
+            font-size: 1.1rem; 
+        }   
+            &-paragraph1, &-paragraph2{ 
+                margin-bottom: 1.5vh; 
+                @include tablet{ 
+                line-height: 1.6;
+                } 
+                @include desktop{ 
+                    &:hover{
+                        transform: scale(1.2); 
+                        z-index: 3; 
+                        transition: transform 0.5s; 
+                    }
+                }
+            } 
+            &-paragraph2{ 
+                
+                @include tablet{ 
+                    margin-left:5%; 
+                    margin-bottom: 0;
+                } 
+                @include desktop{ 
+                    margin-left: 7%; 
+                } 
+                @include wide-desktop{ 
+                    margin-left: 9%;
+                }
+            }
+        }
+    &__title{  
+        margin-bottom: 2%; 
+        @include tablet{ 
+           font-size: 2rem;
+        }
+
+    } 
+}
+.gallery{ 
+    width: 92vw; 
+    padding-left: 4vw; 
+    padding-right: 4vw; 
+    padding-top: 2vh;
+    background-color: rgba(255, 255, 255, 0.761); 
+    @include desktop{  
+        width:80%;
+        padding-left: 10%; 
+        padding-right: 10%; 
+        font-size: 3rem;
+    } 
+    @include wide-desktop{  
+        width: 90%;
+        padding-left: 5%; 
+        padding-right: 5%; 
+    }
+    &__header{ 
+        font-weight: bold; 
+        font-size: 2.1rem; 
+        @include tablet{ 
+            margin: 7% 0;
+        }  
+        @include desktop{
+            font-size: 3.5rem; 
+            font-weight: bold;
+        }
+        
+    }
+    &__container{
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: space-between; 
+        @include tablet{ 
+            flex-direction: row; 
+            flex-wrap: wrap; 
+            align-items: center;  
+        }
+        &-photo{ 
+            margin-bottom: 4.5%; 
+            width: 94vw; 
+            max-height: 250px; 
+            max-width: 450px;  
+            margin-bottom: 1%; 
+            filter: grayscale(75%); 
+            &:hover{
+                filter: none; 
+                transform: scale(1.3); 
+                z-index: 3; 
+                transition: transform .5s;
+            }
+            @include tablet{  
+                min-height: 250px;
+                max-height: 250px; 
+                width: 48%; 
+                &:nth-child(2n){ 
+                    margin-left: 2%; 
+                    width: 50%
+                }
+            }  
+           
+            @include wide-tablet{ 
+                width: 31%; 
+                margin-right: 2%; 
+                min-height: 200px; 
+                max-height: 200px;
+                &:nth-child(3n){ 
+                    margin-right: 0;
+                } 
+                &:nth-child(2n){ 
+                    margin-left: 0; 
+                    width: 31%;
+                } 
+            } 
+            @include desktop{  
+                min-height: 220px;
+                max-height: 220px; 
+                width: 30%; 
+                min-width: 320px; 
+                &:nth-child(3n){ 
+                    margin-right: 0;
+            }
+                &:nth-child(2n){ 
+                    margin-left: 0%; 
+                    width: 30%
+                }
+
+            } 
+            @include wide-desktop{  
+                margin-right: 1%;
+                min-height: 250px;
+                max-height: 300px; 
+                width: 24%; 
+                
+                &:nth-child(3n),  &:nth-child(2n){ 
+                    margin-right: 1%; 
+                    width: 24%;
+            }
+               
+                &:nth-child(4n){ 
+                    margin-right: 0%; 
+                   width: 24%;
+                } 
+
+            } 
+        }
+    }
+}  
+.conversation{ 
+    &__header{ 
+        text-align: left; 
+        font-size: 1.7rem; 
+        margin-left: 6vw; 
+        @include desktop 
+        { 
+            margin-left: 8vw;
+        }
+
+    }
+}
+form{ 
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-end; 
+    width: 70%; 
+    @include tablet{ 
+        width: 65%;
+    } 
+    
+} 
+.newcomment{ 
+    display: flex; 
+    width: 94vw; 
+    padding-left: 3vw; 
+    padding-right: 3vw;
+    justify-content: center; 
+    @include desktop{ 
+        width: 50%;
+        padding:0 25% 0 25%;
+    } 
+
+    
+    @include tablet{ 
+        width: 70%;
+        padding:0 15% 0 15%; 
+    }
+    
+    &__forms{ 
+        margin-left: 5%; 
+        
+        @include tablet{ 
+            margin-left: 0%; 
+            
+        }
+        &-name{
+            width: 65vw; 
+            height: 5vh; 
+            border-radius: 8px; 
+            background-color: rgba(194, 185, 185, 0.08); 
+            border-color: rgba(191, 183, 183, .4); 
+            max-width: 400px;  
+            @include tablet{ 
+                max-width: 375px;
+            } 
+            @include wide-tablet{ 
+                max-width: 500px;
+            } 
+            @include desktop{ 
+                max-width: 555px;
+            } 
+            @include wide-desktop{ 
+                max-width: 705px;
+            }
+           
+        } 
+        &-comment{ 
+            width: 66vw; 
+            height: 13vh; 
+            margin-bottom: 1.5vh;
+            border-radius: 8px; 
+            background-color: rgba(194, 185, 185, 0.08); 
+            border-color: rgba(191, 183, 183, .2); 
+            max-width: 400px;  
+            @include tablet{ 
+                max-width: 375px;
+            } 
+            @include wide-tablet{ 
+                max-width: 500px;
+            } 
+            @include desktop{ 
+                max-width: 555px;
+            }
+            @include wide-desktop{ 
+                max-width: 705px;
+            }
+        } 
+        &-button{ 
+            width: 67vw; 
+            height: 12vw; 
+            background-color: rgb(56, 56, 56);  
+            color: white; 
+            font-size: 1.2rem; 
+            border-radius: 8px; 
+            padding:0px; 
+            margin-bottom: 10%;
+            max-width: 410px;  
+            @include tablet{
+                width:35%;
+                height: 6vh; 
+                //  
+                align-self: flex-end; 
+                max-width: 135px;
+            } 
+            @include wide-tablet{ 
+                
+            }
+
+        }
+        
+    } 
+        &__image{ 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 100%; 
+            margin-top: 25px; 
+            margin-top: 2.5%;
+            @include tablet{ 
+                margin-right: 10%; 
+                margin-top: 1.5%;
+            } 
+            @include desktop{ 
+                margin-top: 1.5%;
+                margin-right:0 ;
+            } 
+    } 
+}
+
+label{ 
+   width:66vw; 
+   text-align: left; 
+   max-width: 400px;   
+   font-weight: bold;
+   color: rgba(228, 226, 226, 0.898); 
+   @include tablet{ 
+       max-width: 375px;
+   } 
+   @include wide-tablet{ 
+      max-width: 500px; 
+   } 
+   @include desktop{ 
+       max-width: 555px;
+   } 
+   @include wide-desktop{ 
+    max-width: 705px;
+}
+} 
+
+.comments{  
+    display:flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    padding-left: 3vw; 
+    padding-right: 1vw; 
+    width: 94vw;
+    @include desktop{ 
+        width: 50%;
+        padding:0 25% 0 25%;
+    } 
+    
+    @include tablet{ 
+        width: 70%;
+        padding:0 15% 0 15%; 
+    }
+    &__box{ 
+        width: 80vw;
+        display: flex; 
+        justify-content: left; 
+        align-items: center; 
+        padding-top: 1%; 
+        padding-left: 3vw;
+        border-top: 2px solid rgba(191, 183, 183, .4); 
+        @include tablet{ 
+            width: 60vw;
+        }  
+        @include desktop{ 
+            width: 50vw; 
+        }
+
+        &:last-child{ 
+            border-bottom: 2px solid rgba(191, 183, 183, .4); 
+            margin-bottom: 6vh;
+        } 
+        &-1stline{ 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            width: 60vw; 
+            @include tablet{ 
+                width:50vw;
+            } 
+            @include desktop{ 
+                width: 42vw;
+            }
+        }
+        &-image{ 
+            width:50px; 
+            height:50px; 
+            border-radius: 100%; 
+            margin-right: 5px; 
+            align-self: flex-start; 
+            margin-top: 1vh;
+            &-comment{ 
+                margin-top: 0;
+            } 
+            
+        } 
+        &-comment{ 
+            margin-top: 0; 
+            width: 65vw; 
+            display: inline;
+             
+
+        }
+        &-name{ 
+            display:inline; 
+            vertical-align: middle; 
+            margin-bottom: 0; 
+            margin-bottom: 1vh;
+           
+        } 
+        &-text{ 
+            display:flex; 
+            flex-direction: column;
+            width: 50%; 
+            align-items: left ; 
+            justify-self: center; 
+            margin-left: 5%;
+           
+        } 
+        &-time{ 
+            margin-bottom: 1vh;
+        }
+
+
+    }
+}
+
+.footer{ 
+    background-color: rgb(56, 56, 56); 
+    width: 94vw; 
+    padding-left: 3vw; 
+    padding-right: 3vw; 
+    padding-top: 2.1vh; 
+    color: white; 
+    padding-bottom: 4.5vh; 
+    @include desktop{ 
+        padding-left: 12%; 
+        padding-right: 12%; 
+        width: 76%;
+    } 
+    @include wide-desktop{ 
+        padding-left: 15%; 
+        padding-right: 15%; 
+        width: 70%;
+    }
+
+    &__banner{    
+        @include tablet{ 
+            display: flex; 
+            align-items: center;
+            justify-content: space-between; 
+        } 
+        &-header{ 
+            color: white; 
+            font-size: 3rem; 
+            justify-self: left; 
+            @include tablet{ 
+                font-size: 3rem;
+            } 
+            @include desktop{ 
+                font-size: 2.0rem;
+            } 
+            @include wide-desktop{ 
+                font-size: 2.6rem;
+            }
+        } 
+        &-icons{        
+            display: flex; 
+            align-items: center; 
+            justify-content: left; 
+            padding-bottom: 1.5rem; 
+            margin-top: 8%; 
+            @include tablet{ 
+                 margin-top: 3%; 
+                 margin-right: 8%; 
+                 margin-left: 1%;   
+            } 
+            @include desktop{ 
+                margin-right: 43%;
+            }
+            &--images{
+            height: 30px; 
+            width: 30px; 
+            margin-right: 9vw; 
+            &:hover{
+                transform: scale(1.5); 
+                z-index: 3; 
+                transition: transform 0.5s ;
+            }
+            @include tablet{ 
+                margin-right: 3vw;
+            }
+            } 
+        }
+        &-site{  
+            @include mobile{ 
+          display: none;
+            } 
+            @include tablet{ 
+                display: inline; 
+                font-size: 2rem; 
+                font-weight: lighter;
+            } 
+            &:hover{
+                transform: scale(1.4); 
+                z-index: 3; 
+                transition: transform .5s;
+            }
+         }
+        } 
+        &__associates{ 
+            display: flex; 
+                flex-direction: column; 
+                display: flex; 
+                flex-direction: column; 
+                align-content:flex-start; 
+                justify-content: space-between; 
+                @include tablet{ 
+                    display: flex; 
+                    flex-direction: row;  
+                } 
+                @include desktop{ 
+                    width: 60%;
+                }
+            &-box{ 
+                display: flex; 
+                flex-direction: column; 
+                display: flex; 
+                flex-direction: column; 
+                align-content:flex-start; 
+                justify-content: space-evenly; 
+                margin-bottom: 4%;
+                @include tablet{ 
+                    margin-right: 3%; 
+                    &:nth-child(3n){ 
+                        margin-right: 0;
+                    } 
+                @include desktop{ 
+                    margin-right: 5%;
+                }
+                   
+            } 
+
+                &--header{ 
+                    font-size: 1.1rem; 
+                    margin-bottom: 0%;
+                    &---1{ 
+                        margin-bottom: .3vh; 
+                    } 
+                    &---2{ 
+                        margin-top: .3vh; 
+                        margin-bottom: 2vh; 
+                    }
+                }
+                &--website{ 
+                    margin-top:4%;     
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                } 
+                &--address{ 
+                    font-size: 1.1rem;
+                    &---line1{ 
+                        margin-bottom: 0;
+                        margin-top:0;
+                    } 
+                    &---line2{ 
+                        margin-top:.5%; 
+                        margin-bottom: 0; 
+                    }
+                }
+            }
+       
+        } 
+        &__legal{ 
+            margin-top: 10%; 
+            @include tablet{ 
+                display: flex; 
+                margin-top: 0; 
+            }
+    } 
+} 
+
+     
